@@ -45,19 +45,19 @@
 					※curlコマンド実行時、ブラウザは別のページを表示しているタブに切り替えてください.
 					</h3>
 			<pre><code>
-			curl "https://fcm.googleapis.com/fcm/send" \
-				-X POST \
-				-H "Content-Type: application/json" \
-				-H "Authorization: key=AAAAgPrrevA:APA91bEVBMnruz0ao1xNfuKPtt8YioJnAXgTaZqHbClQRnnN7b_iukMzts-hYAUJris90UJSEDd3sLOA0TQwNuQg8iQC19TtFpw6Eo6YCeam5Sh_f_4MuMmmhbe1ZrZnrfCN2wwgoMPN" \
-				-d '{
-					"notification": {
-					"title": "Notification Title",
-					"body": "by HAL Data",
-					"icon": "https://images-na.ssl-images-amazon.com/images/I/51lVPTHuDkL._SX342_.jpg",
-					"click_action": "https://haldata-push.netlify.com/"
-				},
-				"to": "Your Token"
-				}'
+curl "https://fcm.googleapis.com/fcm/send" \
+	-X POST \
+	-H "Content-Type: application/json" \
+	-H "Authorization: key=AAAAgPrrevA:APA91bEVBMnruz0ao1xNfuKPtt8YioJnAXgTaZqHbClQRnnN7b_iukMzts-hYAUJris90UJSEDd3sLOA0TQwNuQg8iQC19TtFpw6Eo6YCeam5Sh_f_4MuMmmhbe1ZrZnrfCN2wwgoMPN" \
+	-d '{
+		"notification": {
+		"title": "Notification Title",
+		"body": "by HAL Data",
+		"icon": "https://images-na.ssl-images-amazon.com/images/I/51lVPTHuDkL._SX342_.jpg",
+		"click_action": "https://haldata-push.netlify.com/"
+	},
+	"to": "Your Token"
+	}'
 			</code></pre>
 				</div>
 			</div>
