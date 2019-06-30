@@ -7,7 +7,7 @@
 		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" onload="prettyPrint()">
 		<!-- Service worker -->
 		<script type="text/javascript">
 			if ('serviceWorker' in navigator) {
@@ -37,12 +37,32 @@
 						<input type="button" id="btnSubscribe" value="通知を許可する">
 						<input type="button" id="btnUnSubscribe" value="トークン削除" style="display:none;">
 					</p>
-					<p><input type="text" value="YOUR-INCETANCE-ID-TOKEN" id="textInstanceIdToken">
+					<p>
+						<input type="text" value="YOUR-INCETANCE-ID-TOKEN" id="textInstanceIdToken">
 					</p>
+					<button onclick="copyToClipboard()">Copy Token</button>
 				</div>
 			</div>
+		<br>
+		<h3>Tokenをコピーして以下の[Your Token]に置き換えてcurlコマンドを実行してください.<br>
+		※curlコマンド実行時、ブラウザは別のページを表示しているタブに切り替えてください.
+		</h3>
+<pre><code>
+curl "https://fcm.googleapis.com/fcm/send" \
+	-X POST \
+	-H "Content-Type: application/json" \
+	-H "Authorization: key=AAAAgPrrevA:APA91bEVBMnruz0ao1xNfuKPtt8YioJnAXgTaZqHbClQRnnN7b_iukMzts-hYAUJris90UJSEDd3sLOA0TQwNuQg8iQC19TtFpw6Eo6YCeam5Sh_f_4MuMmmhbe1ZrZnrfCN2wwgoMPN" \
+	-d '{
+		"notification": {
+		"title": "Notification Title",
+		"body": "by HAL Data",
+		"icon": "https://images-na.ssl-images-amazon.com/images/I/51lVPTHuDkL._SX342_.jpg",
+		"click_action": "https://haldata-push.netlify.com/"
+	},
+    "to": "Your Token"
+	}'
+</code></pre>
 		</section>
-
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-messaging.js"></script>
 		<script>
@@ -57,7 +77,17 @@
 				appId: "1:553965550320:web:25d9dd04c7aafc1f"
 			};
 			firebase.initializeApp(firebaseConfig);
-		</script>
+			</script>
 		<script defer src="main.js"></script>
+		<script>
+			function copyToClipboard() {
+				// コピー対象をJavaScript上で変数として定義する
+				var copyTarget = document.getElementById("textInstanceIdToken");
+				// コピー対象のテキストを選択する
+				copyTarget.select();
+				// 選択しているテキストをクリップボードにコピーする
+				document.execCommand("Copy");
+			}
+		</script>
 	</body>
 </html>
