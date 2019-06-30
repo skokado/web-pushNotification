@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Push Notification - HAL data</title>
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	</head>
+	<body class="is-preload">
+		<!-- Service worker -->
+		<script type="text/javascript">
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker
+					.register('serviceWorker.js')
+					.then(function () { console.log("Service Worker Registered"); })
+					.catch(function () { console.log("Service Worker Not Registered"); });
+			}
+		</script>
+			<!-- Header -->
+			<div id="header">
+				<!-- Logo -->
+				<h1><a href="index.html" id="logo">HAL Data Lab! <em>- Push Notification</em></a></h1>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li class="current"><a href="push-notification.html">Push Notification</a></li>
+					</ul>
+				</nav>
+			</div>
+
+		<section class="wrapper style1">
+			<div class="container">
+				<div id="content">
+					<p>
+						<input type="button" id="btnSubscribe" value="通知を許可する">
+						<input type="button" id="btnUnSubscribe" value="トークン削除">
+					</p>
+					<p><input type="text" value="YOUR-INCETANCE-ID-TOKEN" id="textInstanceIdToken">
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-messaging.js"></script>
+		<script>
+			// Initialize Firebase
+			const firebaseConfig = {
+				apiKey: "AIzaSyDgZgBWrXfVJE-F6S1zbQCXfU-m5RWEzmA",
+				authDomain: "haldata-pwa.firebaseapp.com",
+				databaseURL: "https://haldata-pwa.firebaseio.com",
+				projectId: "haldata-pwa",
+				storageBucket: "haldata-pwa.appspot.com",
+				messagingSenderId: "553965550320",
+				appId: "1:553965550320:web:25d9dd04c7aafc1f"
+			};
+			firebase.initializeApp(firebaseConfig);
+		</script>
+		<script defer src="main.js"></script>
+	</body>
+</html>

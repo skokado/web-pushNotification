@@ -1,0 +1,30 @@
+{
+    "name": "title-pwa3",
+    "scope": "/pwa3/",
+    "display": "standalone",
+    "start_url": "/pwa3/",
+    "short_name": "shorttitle-pwa3",
+    "theme_color": "transparent",
+    "orientation": "any",
+    "background_color": "transparent",
+    "prefer_related_applications": false,
+    "generated": "true",
+    "icons": [
+        {
+            "src": "images/icons/192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icons/256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icons/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "gcm_sender_id": "103953800507"
+}
