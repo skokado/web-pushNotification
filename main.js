@@ -50,8 +50,8 @@ window.onload = function () {
     // トークン取得
     messaging.getToken().then(function (currentToken) {
         if (currentToken) {
-            // 本来ここでサーバにトークン送る処理
-            //sendTokenToServer(currentToken);
+            // サーバ側へトークンを収集するための何らかの処理
+            // sendTokenToServer(currentToken);
             textInstanceIdToken.value = currentToken;
             btnSubscribe.style.display = 'none';
             btnUnSubscribe.style.display = 'block';
