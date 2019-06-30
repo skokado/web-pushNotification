@@ -1,9 +1,9 @@
 {
-    "name": "title-pwa3",
-    "scope": "/pwa3/",
+    "name": "title-push",
+    "scope": "/",
     "display": "standalone",
-    "start_url": "/pwa3/",
-    "short_name": "shorttitle-pwa3",
+    "start_url": "//",
+    "short_name": "shorttitle-push",
     "theme_color": "transparent",
     "orientation": "any",
     "background_color": "transparent",
