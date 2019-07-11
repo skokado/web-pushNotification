@@ -2,7 +2,7 @@
     "name": "title-push",
     "scope": "/",
     "display": "standalone",
-    "start_url": "//",
+    "start_url": "/",
     "short_name": "shorttitle-push",
     "theme_color": "transparent",
     "orientation": "any",
